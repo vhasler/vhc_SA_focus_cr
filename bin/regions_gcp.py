@@ -1,15 +1,22 @@
 #!/usr/bin/env python3
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "lib"))
+
 import requests
 from bs4 import BeautifulSoup
 import csv
 import time
 import unicodedata
 
+# --- App Paths ---
+APP_DIR = os.path.dirname(os.path.abspath(__file__))
+LOOKUP_DIR = os.path.join(APP_DIR, "..", "lookups")
+os.makedirs(LOOKUP_DIR, exist_ok=True)
+
+# --- Provider spezifisch ---
 PROVIDER = "Google"
+OUTPUT = os.path.join(LOOKUP_DIR, f"regions_{PROVIDER.lower()}.csv")
 URL = "https://cloud.google.com/compute/docs/gpus/gpu-regions-zones"
-OUTPUT = "regions_gcp.csv"
 GEOCODE_API = "https://nominatim.openstreetmap.org/search"
 
 def normalize_text(text):

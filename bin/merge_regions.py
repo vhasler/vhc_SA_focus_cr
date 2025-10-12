@@ -1,27 +1,47 @@
 #!/usr/bin/env python3
-import csv
 import os
+import sys
+import csv
+from glob import glob
 
-OUTPUT = os.path.join("..", "lookups", "cloud_regions.csv")
-SOURCES = ["regions_aws.csv", "regions_azure.csv", "regions_gcp.csv"]
+# Bibliotheken aus lib/ laden
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "lib"))
 
-merged = []
+# --- App-Verzeichnisse ---
+APP_DIR = os.path.dirname(os.path.abspath(__file__))
+LOOKUP_DIR = os.path.join(APP_DIR, "..", "lookups")
+os.makedirs(LOOKUP_DIR, exist_ok=True)
+
+# --- Dynamische Quelldateien ---
+SOURCES = sorted(glob(os.path.join(LOOKUP_DIR, "regions_*.csv")))
+OUTPUT = os.path.join(LOOKUP_DIR, "cloud_regions.csv")
+
 header = ["provider", "region_id", "city", "country", "lat", "lon"]
+merged = []
 
-print("[*] Führe CSV-Dateien zusammen ...")
+print(f"[*] Führe {len(SOURCES)} CSV-Dateien zusammen ...")
+
+if not SOURCES:
+    print("[!] Keine regions_*.csv-Dateien im lookups-Verzeichnis gefunden.")
+    sys.exit(0)
+
 for src in SOURCES:
-    if not os.path.exists(src):
-        print(f"[!] Datei fehlt: {src}")
-        continue
-    with open(src, newline="", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            merged.append(row)
+    try:
+        with open(src, newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                merged.append(row)
+        print(f"[+] {os.path.basename(src)} geladen ({len(merged)} Zeilen kumuliert).")
+    except Exception as e:
+        print(f"[!] Fehler beim Lesen von {src}: {e}")
 
-with open(OUTPUT, "w", newline="", encoding="utf-8") as f:
-    writer = csv.DictWriter(f, fieldnames=header)
-    writer.writeheader()
-    writer.writerows(merged)
-
-print(f"[✓] Zusammengeführt in: {OUTPUT}")
-print(f"→ {len(merged)} Zeilen exportiert")
+# --- Ergebnis schreiben ---
+try:
+    with open(OUTPUT, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=header)
+        writer.writeheader()
+        writer.writerows(merged)
+    print(f"[✓] Zusammengeführt in: {OUTPUT}")
+    print(f"→ {len(merged)} Zeilen exportiert.")
+except Exception as e:
+    print(f"[!] Fehler beim Schreiben nach {OUTPUT}: {e}")

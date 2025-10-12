@@ -6,9 +6,15 @@ from bs4 import BeautifulSoup
 import csv
 import time
 
+# --- App Paths ---
+APP_DIR = os.path.dirname(os.path.abspath(__file__))
+LOOKUP_DIR = os.path.join(APP_DIR, "..", "lookups")
+os.makedirs(LOOKUP_DIR, exist_ok=True)
+
+# --- Provider spezifisch ---
 PROVIDER = "Amazon"
+OUTPUT = os.path.join(LOOKUP_DIR, f"regions_{PROVIDER.lower()}.csv")
 URL = "https://docs.aws.amazon.com/quicksuite/latest/userguide/regions.html"
-OUTPUT = "regions_aws.csv"
 API_URL = "https://ipinfo.io/{}/json"
 
 def get_geo(ip):
