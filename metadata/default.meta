@@ -22,3 +22,7 @@ export = system
 
 [visualizations]
 export = system
+
+[lookups]
+access = read : [ * ], write : [ * ]
+export = system
