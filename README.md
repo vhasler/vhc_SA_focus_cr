@@ -4,7 +4,7 @@
 Die benötigten Python-Bibliotheken sind bereits in der App enthalten.
 Falls eine Neuinstallation erforderlich ist (z. B. bei lokaler Entwicklung), können sie mit
 ```bash
-pip install -r requirements.txt -t lib
+pip install --no-binary :all: -r requirements.txt -t lib
 ```
 erneut installiert werden.
 
@@ -31,7 +31,7 @@ erneut installiert werden.
 The required Python libraries are already included in the app.
 If reinstallation is needed (e.g., during local development), run:
 ```bash
-pip install -r requirements.txt -t lib
+pip install --no-binary :all: -r requirements.txt -t lib
 ```
 
 ## Cloud Region Builder (vhc_SA_cloudprovider)

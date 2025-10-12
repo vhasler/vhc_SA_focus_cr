@@ -1,4 +1,4 @@
-Metadata-Version: 2.1
+Metadata-Version: 2.4
 Name: idna
 Version: 3.10
 Summary: Internationalized Domain Names in Applications (IDNA)
@@ -26,6 +26,7 @@ Classifier: Programming Language :: Python :: Implementation :: PyPy
 Classifier: Topic :: Internet :: Name Service (DNS)
 Classifier: Topic :: Software Development :: Libraries :: Python Modules
 Classifier: Topic :: Utilities
+License-File: LICENSE.md
 Requires-Dist: ruff >= 0.6.2 ; extra == "all"
 Requires-Dist: mypy >= 1.11.2 ; extra == "all"
 Requires-Dist: pytest >= 8.3.2 ; extra == "all"
