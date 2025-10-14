@@ -1,10 +1,10 @@
 {
   "schemaVersion": "2.0.0",
   "info": {
-    "title": "VHC Cloud Provider Supporting Add-on",
+    "title": "CloudRegions SA",
     "id": {
       "group": null,
-      "name": "vhc_SA_cloudprovider",
+      "name": "vhc_SA_cloudregions",
       "version": "0.0.1"
     },
     "author": [
