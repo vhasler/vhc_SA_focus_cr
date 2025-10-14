@@ -37,23 +37,3 @@ access = read : [ * ], write : [ admin, sc_admin ]
 [commands]
 export = system
 access = read : [ * ], write : [ admin, sc_admin ]
-
-[nav]
-export = app
-access = read : [ * ], write : [ admin, sc_admin ]
-
-[views]
-export = app
-access = read : [ * ], write : [ admin, sc_admin ]
-
-[collections]
-export = app
-access = read : [ * ], write : [ admin, sc_admin ]
-
-[restmap]
-export = app
-access = read : [ * ], write : [ admin, sc_admin ]
-
-[savedsearches]
-export = app
-access = read : [ * ], write : [ admin, sc_admin ]
