@@ -1,7 +1,7 @@
 {
   "schemaVersion": "2.0.0",
   "info": {
-    "title": "CloudRegions SA",
+    "title": "SA CloudRegions",
     "id": {
       "group": null,
       "name": "vhc_SA_cloudregions",
