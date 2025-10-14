@@ -1,28 +1,59 @@
 []
-access = read : [ * ], write : [ sc_admin, admin ]
+access = read : [ * ], write : [ admin, sc_admin ]
 export = none
-
-[alert_actions]
-export = system
 
 [eventtypes]
 export = system
-
-[lookups]
-export = system
-
-[props]
-export = system
+access = read : [ * ], write : [ admin, sc_admin ]
 
 [tags]
 export = system
+access = read : [ * ], write : [ admin, sc_admin ]
+
+[lookups]
+export = system
+access = read : [ * ], write : [ admin, sc_admin ]
 
 [transforms]
 export = system
+access = read : [ * ], write : [ admin, sc_admin ]
+
+[props]
+export = system
+access = read : [ * ], write : [ admin, sc_admin ]
+
+[macros]
+export = system
+access = read : [ * ], write : [ admin, sc_admin ]
 
 [visualizations]
 export = system
+access = read : [ * ], write : [ admin, sc_admin ]
 
-[lookups]
-access = read : [ * ], write : [ * ]
+[alert_actions]
 export = system
+access = read : [ * ], write : [ admin, sc_admin ]
+
+[commands]
+export = system
+access = read : [ * ], write : [ admin, sc_admin ]
+
+[nav]
+export = app
+access = read : [ * ], write : [ admin, sc_admin ]
+
+[views]
+export = app
+access = read : [ * ], write : [ admin, sc_admin ]
+
+[collections]
+export = app
+access = read : [ * ], write : [ admin, sc_admin ]
+
+[restmap]
+export = app
+access = read : [ * ], write : [ admin, sc_admin ]
+
+[savedsearches]
+export = app
+access = read : [ * ], write : [ admin, sc_admin ]
