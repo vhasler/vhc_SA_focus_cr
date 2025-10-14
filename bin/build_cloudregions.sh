@@ -2,11 +2,14 @@
 # -----------------------------------------------------------------------------
 # build_regions.sh
 # Lädt Cloud-Region-Daten (AWS, Azure, GCP), führt sie zusammen
-# und speichert sie als lookups/cloud_regions.csv
+# und speichert sie als lookups/cloudregions.csv
 # -----------------------------------------------------------------------------
 
 set -e  # Script bricht bei Fehler ab
 
+# -----------------------------------------------------------------------------
+# App- und Verzeichnisvariablen
+# -----------------------------------------------------------------------------
 APP_DIR="$(dirname "$0")"
 APP_NAME="vhc_SA_cloudregions"
 APP_BASE="$SPLUNK_HOME/etc/apps/${APP_NAME}"
@@ -14,13 +17,14 @@ APP_VAR_DIR="${APP_BASE}/var"
 LOOKUP_DIR="${APP_BASE}/lookups"
 
 # -----------------------------------------------------------------------------
-# Pfade
+# Pfade und Dateinamen
 # -----------------------------------------------------------------------------
 LOCKFILE="${APP_VAR_DIR}/vhc_SA_cloudregions.lock"
 LOGFILE="$SPLUNK_HOME/var/log/splunk/vhc_SA_cloudregions.log"
+OUTPUT_FILE="${LOOKUP_DIR}/cloudregions.csv"
 
 # -----------------------------------------------------------------------------
-# Lockfile: Verhindert parallele Ausführungen
+# Lockfile: verhindert parallele Ausführungen
 # -----------------------------------------------------------------------------
 if [ -f "$LOCKFILE" ]; then
     echo "$(date '+%Y-%m-%d %H:%M:%S') - Script already running, exiting." >> "$LOGFILE"
@@ -29,6 +33,9 @@ fi
 trap "rm -f \"$LOCKFILE\"" EXIT
 touch "$LOCKFILE"
 
+# -----------------------------------------------------------------------------
+# Startmeldung
+# -----------------------------------------------------------------------------
 echo "=== [$(date '+%Y-%m-%d %H:%M:%S')] Cloud Regions Build gestartet ===" >> "$LOGFILE"
 
 # -----------------------------------------------------------------------------
@@ -58,12 +65,23 @@ echo "[*] Führe CSV-Dateien zusammen..." >> "$LOGFILE"
 # -----------------------------------------------------------------------------
 # 5️⃣ Ergebnis prüfen
 # -----------------------------------------------------------------------------
-if [[ -f "${LOOKUP_DIR}/cloud_regions_coord.csv" ]]; then
-    echo "[✓] Erfolgreich erstellt: ${LOOKUP_DIR}/cloudregions.csv" >> "$LOGFILE"
+if [[ -f "$OUTPUT_FILE" ]]; then
+    echo "[✓] Erfolgreich erstellt: $OUTPUT_FILE" >> "$LOGFILE"
 else
-    echo "[!] Fehler: cloud_regions_coord.csv wurde nicht erstellt!" >> "$LOGFILE"
+    echo "[!] Fehler: $OUTPUT_FILE wurde nicht erstellt!" >> "$LOGFILE"
     exit 1
 fi
 
+# -----------------------------------------------------------------------------
+# 6️⃣ Logfile ins _internal indexieren (Splunk Cloud-kompatibel)
+# -----------------------------------------------------------------------------
+"$SPLUNK_HOME/bin/splunk" add oneshot "$LOGFILE" \
+    -index _internal \
+    -sourcetype vhc:cloudregions \
+    > /dev/null 2>&1 || true
+
+# -----------------------------------------------------------------------------
+# Abschlussmeldung
+# -----------------------------------------------------------------------------
 echo "[✓] Fertig. ($(date '+%Y-%m-%d %H:%M:%S'))" >> "$LOGFILE"
 exit 0
