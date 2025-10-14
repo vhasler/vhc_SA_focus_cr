@@ -1,4 +1,4 @@
-# vhc_SA_cloudprovider
+# vhc_SA_cloudregions
 ---
 ## 🇩🇪 Deutsch
 Die benötigten Python-Bibliotheken sind bereits in der App enthalten.
