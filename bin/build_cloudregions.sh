@@ -16,8 +16,8 @@ LOOKUP_DIR="${APP_BASE}/lookups"
 # -----------------------------------------------------------------------------
 # Pfade
 # -----------------------------------------------------------------------------
-LOCKFILE="${APP_VAR_DIR}/vhc_cloudregions.lock"
-LOGFILE="$SPLUNK_HOME/var/log/splunk/vhc_cloudregions.log"
+LOCKFILE="${APP_VAR_DIR}/vhc_SA_cloudregions.lock"
+LOGFILE="$SPLUNK_HOME/var/log/splunk/vhc_SA_cloudregions.log"
 
 # -----------------------------------------------------------------------------
 # Lockfile: Verhindert parallele Ausführungen
