@@ -13,8 +13,11 @@ APP_BASE="$SPLUNK_HOME/etc/apps/${APP_NAME}"
 APP_VAR_DIR="${APP_BASE}/var"
 LOOKUP_DIR="${APP_BASE}/lookups"
 
+# -----------------------------------------------------------------------------
+# Pfade
+# -----------------------------------------------------------------------------
 LOCKFILE="${APP_VAR_DIR}/vhc_cloudprovider.lock"
-LOGFILE="${APP_VAR_DIR}/vhc_regions.log"
+LOGFILE="$SPLUNK_HOME/var/log/splunk/vhc_regions.log"
 
 # -----------------------------------------------------------------------------
 # Lockfile: Verhindert parallele Ausführungen
