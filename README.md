@@ -6,13 +6,17 @@ Falls eine Neuinstallation erforderlich ist (z. B. bei lokaler Entwicklung), kö
 ```bash
 pip install --no-compile -r requirements.txt -t lib
 
+# BeautifulSoup-Tests & Fuzz-Cases entfernen (vermeidet "Binary without source")
 rm -rf lib/bs4/tests || true
 find lib -type f -name '*.testcase' -delete
 
+# falls sich doch irgendwo .so verirrt haben: (sollte nach obigem Pinning nicht nötig sein)
+find lib -type f -name '*.so' -delete
+
+# Permissions gemäß AppInspect-Empfehlung
 find . -type d -exec chmod 755 {} +
 find . -type f -exec chmod 644 {} +
 find bin -type f -exec chmod 755 {} +
-
 ```
 erneut installiert werden.
 
@@ -41,9 +45,14 @@ If reinstallation is needed (e.g., during local development), run:
 ```bash
 pip install --no-compile -r requirements.txt -t lib
 
+# Remove BeautifulSoup test and fuzz files (prevents "Binary without source" AppInspect errors)
 rm -rf lib/bs4/tests || true
 find lib -type f -name '*.testcase' -delete
 
+# Remove any leftover .so binary files (should not be necessary with pinned pure-Python versions)
+find lib -type f -name '*.so' -delete
+
+# Set permissions according to Splunk AppInspect recommendations
 find . -type d -exec chmod 755 {} +
 find . -type f -exec chmod 644 {} +
 find bin -type f -exec chmod 755 {} +
