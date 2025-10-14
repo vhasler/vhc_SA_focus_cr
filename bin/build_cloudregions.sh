@@ -59,7 +59,7 @@ echo "[*] Führe CSV-Dateien zusammen..." >> "$LOGFILE"
 # 5️⃣ Ergebnis prüfen
 # -----------------------------------------------------------------------------
 if [[ -f "${LOOKUP_DIR}/cloud_regions_coord.csv" ]]; then
-    echo "[✓] Erfolgreich erstellt: ${LOOKUP_DIR}/cloud_regions_coord.csv" >> "$LOGFILE"
+    echo "[✓] Erfolgreich erstellt: ${LOOKUP_DIR}/cloudregions.csv" >> "$LOGFILE"
 else
     echo "[!] Fehler: cloud_regions_coord.csv wurde nicht erstellt!" >> "$LOGFILE"
     exit 1

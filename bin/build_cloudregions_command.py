@@ -10,7 +10,7 @@ import sys
 
 def main():
     app_dir = os.path.dirname(__file__)
-    script_path = os.path.join(app_dir, "build_regions.sh")
+    script_path = os.path.join(app_dir, "build_cloudregions.sh")
 
     if not os.path.exists(script_path):
         print(f"[!] Fehler: {script_path} wurde nicht gefunden.")

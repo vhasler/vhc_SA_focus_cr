@@ -14,7 +14,7 @@ os.makedirs(LOOKUP_DIR, exist_ok=True)
 
 # --- Dynamische Quelldateien ---
 SOURCES = sorted(glob(os.path.join(LOOKUP_DIR, "regions_*.csv")))
-OUTPUT = os.path.join(LOOKUP_DIR, "cloud_regions_coord.csv")
+OUTPUT = os.path.join(LOOKUP_DIR, "cloudregions.csv")
 
 header = ["provider", "region_id", "city", "country", "lat", "lon"]
 merged = []
