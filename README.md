@@ -54,6 +54,21 @@ index=_internal sourcetype="vhc:cloudregions"
 | geostats latfield=lat longfield=lon count by provider
 ```
 
+### Unterstützte Provider
+
+- Amazon
+- Microsoft
+- Google
+
+```spl
+| eval provider = case(
+    ProviderName == "AWS", "Amazon",
+    ProviderName == "Microsoft", "Microsoft",
+    ProviderName == "Google Cloud","Google",
+    1=1, ProviderName
+)
+```
+
 ---
 
 ## 🇬🇧 English
@@ -106,4 +121,18 @@ index=_internal sourcetype="vhc:cloudregions"
 - Example usage with maps:
 ```spl
 | geostats latfield=lat longfield=lon count by provider
+```
+
+### Supported Provider
+- Amazon
+- Microsoft
+- Google
+
+```spl
+| eval provider = case(
+    ProviderName == "AWS", "Amazon",
+    ProviderName == "Microsoft", "Microsoft",
+    ProviderName == "Google Cloud","Google",
+    1=1, ProviderName
+)
 ```
