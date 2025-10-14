@@ -2,7 +2,9 @@
 ---
 ## 🇩🇪 Deutsch
 Die benötigten Python-Bibliotheken sind bereits in der App enthalten.
-Falls eine Neuinstallation erforderlich ist (z. B. bei lokaler Entwicklung), können sie mit
+Falls eine Neuinstallation erforderlich ist (z. B. bei lokaler Entwicklung), 
+können sie mit folgendem Befehl neu installiert werden:
+
 ```bash
 pip install --no-compile -r requirements.txt -t lib
 
@@ -18,30 +20,45 @@ find . -type d -exec chmod 755 {} +
 find . -type f -exec chmod 644 {} +
 find bin -type f -exec chmod 755 {} +
 ```
-erneut installiert werden.
 
 ## Cloud Region Builder (vhc_SA_cloudprovider)
 
 ### Automatische Aktualisierung
-- Das Script `build_regions.sh` wird über `inputs.conf` einmal im Quartal ausgeführt.
-- Ausgabe erscheint im Splunk `_internal` Index (`sourcetype=vhc:cloudprovider:regionbuilder`).
+- Das Script `build_cloudregions_command.sh` wird über `inputs.conf` einmal im Quartal ausgeführt.
+- Ausgabe erscheint in Splunk unter:
+```spl
+index=_internal sourcetype="vhc:cloudregions"
+```
 
 ### Manuelle Aktualisierung
-- Direkt über Search starten: 
-  ```spl
-  | build_regions
-  ```
-- Führt `build_regions.sh` aus und zeigt alle Logzeilen in der Search.
+- Kann direkt über die Search App ausgeführt werden:
+```spl
+| cloudregions
+```
+- Führt `build_cloudregions.sh` aus und zeigt alle Logzeilen in der Search-Ausgabe.
 
 ### Ergebnis
-- Zusammengeführte Cloud-Regionen unter:
-`$SPLUNK_HOME/etc/apps/vhc_SA_cloudprovider/lookups/cloud_regions.csv`
+- Die zusammengeführten Cloud-Regionen werden gespeichert unter:
+`$SPLUNK_HOME/etc/apps/vhc_SA_cloudprovider/lookups/cloudregions.csv`
+
+- Zugriff über Lookup-Definition: 
+```spl
+| inputlookup cloudregions
+```
+
+- Output-Felder:
+`city, country, lat, lon, provider, region_id`
+
+- Beispiel für Verwendung in einer Karte:
+```spl
+| geostats latfield=lat longfield=lon count by provider
+```
 
 ---
 
 ## 🇬🇧 English
 The required Python libraries are already included in the app.
-If reinstallation is needed (e.g., during local development), run:
+If reinstallation is needed (e.g., for local development), run the following commands:
 ```bash
 pip install --no-compile -r requirements.txt -t lib
 
@@ -61,16 +78,32 @@ find bin -type f -exec chmod 755 {} +
 ## Cloud Region Builder (vhc_SA_cloudprovider)
 
 ### Automatic Update
-- The script build_regions.sh is executed once per quarter via inputs.conf.
-- Output appears in the Splunk _internal index (sourcetype=vhc:cloudprovider:regionbuilder).
+- The script `build_cloudregions_command.sh` is executed once per quarter via `inputs.conf`.
+- Output appears in Splunk:
+```spl
+index=_internal sourcetype="vhc:cloudregions"
+```
 
 ### Manual Update
-- Run directly from Splunk Search:
+- Can be triggered directly from the Splunk Search app:
   ```spl
-  | build_regions
+  | cloudregions
   ```
-- Executes build_regions.sh and displays all log lines in the Search UI.
+- Executes build_regions.sh internally and displays all log lines in the Search UI.
 
 ### Result
-- The merged cloud regions are stored at:
-`$SPLUNK_HOME/etc/apps/vhc_SA_cloudprovider/lookups/cloud_regions.csv`
+- The merged cloud region data is stored at:
+`$SPLUNK_HOME/etc/apps/vhc_SA_cloudprovider/lookups/cloudregions.csv`
+
+- Lookup Definition: 
+```spl
+| inputlookup cloudregions
+```
+
+- Output fields:
+`city, country, lat, lon, provider, region_id`
+
+- Example usage with maps:
+```spl
+| geostats latfield=lat longfield=lon count by provider
+```
