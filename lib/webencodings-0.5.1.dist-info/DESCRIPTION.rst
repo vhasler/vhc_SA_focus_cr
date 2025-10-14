@@ -1,28 +1,3 @@
-Metadata-Version: 2.0
-Name: webencodings
-Version: 0.5.1
-Summary: Character encoding aliases for legacy web content
-Home-page: https://github.com/SimonSapin/python-webencodings
-Author: Geoffrey Sneddon
-Author-email: me@gsnedders.com
-License: BSD
-Platform: UNKNOWN
-Classifier: Development Status :: 4 - Beta
-Classifier: Intended Audience :: Developers
-Classifier: License :: OSI Approved :: BSD License
-Classifier: Programming Language :: Python
-Classifier: Programming Language :: Python :: 2
-Classifier: Programming Language :: Python :: 2.6
-Classifier: Programming Language :: Python :: 2.7
-Classifier: Programming Language :: Python :: 3
-Classifier: Programming Language :: Python :: 3.3
-Classifier: Programming Language :: Python :: 3.4
-Classifier: Programming Language :: Python :: 3.5
-Classifier: Programming Language :: Python :: 3.6
-Classifier: Programming Language :: Python :: Implementation :: CPython
-Classifier: Programming Language :: Python :: Implementation :: PyPy
-Classifier: Topic :: Internet :: WWW/HTTP
-
 python-webencodings
 ===================
 

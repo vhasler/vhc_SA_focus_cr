@@ -1,10 +1,8 @@
 # vhc_SA_cloudregions - Splunk Cloud safe installation
-# pip install --no-binary :all: --no-compile -r requirements.txt -t lib
 requests==2.31.0
 urllib3==1.26.18
-
 beautifulsoup4==4.12.3
 html5lib==1.1
+charset-normalizer==2.1.1
+idna==3.4
 certifi>=2023.7.22
-charset-normalizer==3.3.2
-idna>=2.10,<4

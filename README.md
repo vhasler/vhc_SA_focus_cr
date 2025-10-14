@@ -4,10 +4,15 @@
 Die benötigten Python-Bibliotheken sind bereits in der App enthalten.
 Falls eine Neuinstallation erforderlich ist (z. B. bei lokaler Entwicklung), können sie mit
 ```bash
-pip install --no-binary :all: --no-compile -r requirements.txt -t lib
-find . -type f -exec chmod 600 {} \;
-find . -type d -exec chmod 700 {} \;
-find ./bin -type f -exec chmod 700 {} \;
+pip install --no-compile -r requirements.txt -t lib
+
+rm -rf lib/bs4/tests || true
+find lib -type f -name '*.testcase' -delete
+
+find . -type d -exec chmod 755 {} +
+find . -type f -exec chmod 644 {} +
+find bin -type f -exec chmod 755 {} +
+
 ```
 erneut installiert werden.
 
@@ -34,10 +39,14 @@ erneut installiert werden.
 The required Python libraries are already included in the app.
 If reinstallation is needed (e.g., during local development), run:
 ```bash
-pip install --no-binary :all: --no-compile -r requirements.txt -t lib
-find . -type f -exec chmod 600 {} \;
-find . -type d -exec chmod 700 {} \;
-find ./bin -type f -exec chmod 700 {} \;
+pip install --no-compile -r requirements.txt -t lib
+
+rm -rf lib/bs4/tests || true
+find lib -type f -name '*.testcase' -delete
+
+find . -type d -exec chmod 755 {} +
+find . -type f -exec chmod 644 {} +
+find bin -type f -exec chmod 755 {} +
 ```
 
 ## Cloud Region Builder (vhc_SA_cloudprovider)
