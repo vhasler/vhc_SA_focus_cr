@@ -1,0 +1,56 @@
+provider,region_id,city,country,lat,lon
+Microsoft,australiacentral,Canberra,Australia,-35.2975906,149.1012676
+Microsoft,australiacentral2,Canberra,Australia,-35.2975906,149.1012676
+Microsoft,australiaeast,New South Wales,Australia,-31.8759835,147.2869493
+Microsoft,australiasoutheast,Victoria,Australia,-36.5986096,144.6780052
+Microsoft,austriaeast,Vienna,Austria,48.2083537,16.3725042
+Microsoft,belgiumcentral,Brussels,Belgium,50.8465573,4.3516970
+Microsoft,brazilsouth,Sao Paulo State,Brazil,-23.5342741,-46.6339157
+Microsoft,brazilsoutheast,Rio,Brazil,-22.9110137,-43.2093727
+Microsoft,canadacentral,Toronto,Canada,43.6534817,-79.3839347
+Microsoft,canadaeast,Quebec,Canada,52.4760892,-71.8258668
+Microsoft,centralindia,Pune,India,18.5213738,73.8545071
+Microsoft,centralus,Iowa,United States,41.9216734,-93.3122705
+Microsoft,chilecentral,Santiago,Chile,-33.4377756,-70.6504502
+Microsoft,eastasia,Hong Kong SAR,Asia Pacific,22.3379117,114.2641931
+Microsoft,eastus,Virginia,United States,37.1232245,-78.4927721
+Microsoft,eastus2,Virginia,United States,37.1232245,-78.4927721
+Microsoft,francecentral,Paris,France,48.8588897,2.3200410
+Microsoft,francesouth,Marseille,France,43.2961743,5.3699525
+Microsoft,germanynorth,Berlin,Germany,52.5173885,13.3951309
+Microsoft,germanywestcentral,Frankfurt,Germany,50.1106444,8.6820917
+Microsoft,indonesiacentral,Jakarta,Indonesia,-6.1754049,106.8271680
+Microsoft,israelcentral,Israel,Israel,30.8124247,34.8594762
+Microsoft,italynorth,Milan,Italy,45.4641943,9.1896346
+Microsoft,japaneast,"Tokyo, Saitama",Japan,35.7856458,139.4723906
+Microsoft,japanwest,Osaka,Japan,34.6937569,135.5014539
+Microsoft,koreacentral,Seoul,Korea,37.5666791,126.9782914
+Microsoft,koreasouth,Busan,Korea,35.1799528,129.0752365
+Microsoft,malaysiawest,Kuala Lumpur,Malaysia,3.1526589,101.7022205
+Microsoft,mexicocentral,Querétaro State,Mexico,20.2730635,-99.8816014
+Microsoft,newzealandnorth,Auckland,New Zealand,-36.8520950,174.7631803
+Microsoft,northcentralus,Illinois,United States,40.0796606,-89.4337288
+Microsoft,northeurope,Ireland,Europe,53.4295000,-8.1227485
+Microsoft,norwayeast,Norway,Norway,61.1529386,8.7876653
+Microsoft,norwaywest,Norway,Norway,61.1529386,8.7876653
+Microsoft,polandcentral,Warsaw,Poland,52.2333742,21.0711489
+Microsoft,qatarcentral,Doha,Qatar,25.2856329,51.5264162
+Microsoft,southafricanorth,Johannesburg,South Africa,-26.2050000,28.0497220
+Microsoft,southafricawest,Cape Town,South Africa,-33.9288301,18.4172197
+Microsoft,southcentralus,Texas,United States,31.2638905,-98.5456116
+Microsoft,southindia,Chennai,India,13.0836939,80.2701860
+Microsoft,southeastasia,Singapore,Asia Pacific,1.3218352,103.9299432
+Microsoft,spaincentral,Madrid,Spain,40.4167047,-3.7035825
+Microsoft,swedencentral,Gävle,Sweden,60.6750132,17.1467019
+Microsoft,switzerlandnorth,Zurich,Switzerland,47.3744489,8.5410422
+Microsoft,switzerlandwest,Geneva,Switzerland,46.2017559,6.1466014
+Microsoft,uaecentral,Abu Dhabi,UAE,24.4538352,54.3774014
+Microsoft,uaenorth,Dubai,UAE,25.0742823,55.1885387
+Microsoft,uksouth,London,United Kingdom,51.4893335,-0.1440551
+Microsoft,ukwest,Cardiff,United Kingdom,51.4816546,-3.1791934
+Microsoft,westcentralus,Wyoming,United States,43.1700264,-107.5685340
+Microsoft,westeurope,Netherlands,Europe,52.3417979,4.8233750
+Microsoft,westindia,Mumbai,India,19.0549990,72.8692035
+Microsoft,westus,California,United States,36.7014631,-118.7559970
+Microsoft,westus2,Washington,United States,38.8950368,-77.0365427
+Microsoft,westus3,Phoenix,United States,33.4484367,-112.0741410

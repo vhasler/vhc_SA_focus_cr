@@ -1,0 +1,128 @@
+provider,region_id,city,country,lat,lon
+Google,africa-south1-a,Johannesburg,South Africa,-26.2050000,28.0497220
+Google,africa-south1-b,Johannesburg,South Africa,-26.2050000,28.0497220
+Google,africa-south1-c,Johannesburg,South Africa,-26.2050000,28.0497220
+Google,asia-east1-a,Changhua County,Taiwan,24.0755667,120.5444667
+Google,asia-east1-b,Changhua County,Taiwan,24.0755667,120.5444667
+Google,asia-east1-c,Changhua County,Taiwan,24.0755667,120.5444667
+Google,asia-east2-a,Hong Kong,APAC,,
+Google,asia-east2-b,Hong Kong,APAC,,
+Google,asia-east2-c,Hong Kong,APAC,,
+Google,asia-northeast1-a,Tokyo,Japan,35.6768601,139.7638947
+Google,asia-northeast1-b,Tokyo,Japan,35.6768601,139.7638947
+Google,asia-northeast1-c,Tokyo,Japan,35.6768601,139.7638947
+Google,asia-northeast2-a,Osaka,Japan,34.6937569,135.5014539
+Google,asia-northeast2-b,Osaka,Japan,34.6937569,135.5014539
+Google,asia-northeast2-c,Osaka,Japan,34.6937569,135.5014539
+Google,asia-northeast3-a,Seoul,South Korea,37.5666791,126.9782914
+Google,asia-northeast3-b,Seoul,South Korea,37.5666791,126.9782914
+Google,asia-northeast3-c,Seoul,South Korea,37.5666791,126.9782914
+Google,asia-south1-a,Mumbai,India,19.0549990,72.8692035
+Google,asia-south1-b,Mumbai,India,19.0549990,72.8692035
+Google,asia-south1-c,Mumbai,India,19.0549990,72.8692035
+Google,asia-south2-a,Delhi,India,28.6328027,77.2197713
+Google,asia-south2-b,Delhi,India,28.6328027,77.2197713
+Google,asia-south2-c,Delhi,India,28.6328027,77.2197713
+Google,asia-southeast1-a,Jurong West,Singapore,1.3434392,103.7058663
+Google,asia-southeast1-b,Jurong West,Singapore,1.3434392,103.7058663
+Google,asia-southeast1-c,Jurong West,Singapore,1.3434392,103.7058663
+Google,asia-southeast2-a,Jakarta,Indonesia,-6.1754049,106.8271680
+Google,asia-southeast2-b,Jakarta,Indonesia,-6.1754049,106.8271680
+Google,asia-southeast2-c,Jakarta,Indonesia,-6.1754049,106.8271680
+Google,australia-southeast1-a,Sydney,Australia,-33.8698439,151.2082848
+Google,australia-southeast1-b,Sydney,Australia,-33.8698439,151.2082848
+Google,australia-southeast1-c,Sydney,Australia,-33.8698439,151.2082848
+Google,australia-southeast2-a,Melbourne,Australia,-37.8142454,144.9631732
+Google,australia-southeast2-b,Melbourne,Australia,-37.8142454,144.9631732
+Google,australia-southeast2-c,Melbourne,Australia,,
+Google,europe-central2-a,Warsaw,Poland,52.2333742,21.0711489
+Google,europe-central2-b,Warsaw,Poland,52.2333742,21.0711489
+Google,europe-central2-c,Warsaw,Poland,52.2333742,21.0711489
+Google,europe-north1-a,Hamina,Finland,60.5683467,27.1925862
+Google,europe-north1-b,Hamina,Finland,60.5683467,27.1925862
+Google,europe-north1-c,Hamina,Finland,60.5683467,27.1925862
+Google,europe-north2-a,Stockholm,Sweden,59.3251172,18.0710935
+Google,europe-north2-b,Stockholm,Sweden,59.3251172,18.0710935
+Google,europe-north2-c,Stockholm,Sweden,59.3251172,18.0710935
+Google,europe-southwest1-a,Madrid,Spain,40.4167047,-3.7035825
+Google,europe-southwest1-b,Madrid,Spain,40.4167047,-3.7035825
+Google,europe-southwest1-c,Madrid,Spain,40.4167047,-3.7035825
+Google,europe-west1-b,St. Ghislain,Belgium,50.4477484,3.8195241
+Google,europe-west1-c,St. Ghislain,Belgium,50.4477484,3.8195241
+Google,europe-west1-d,St. Ghislain,Belgium,50.4477484,3.8195241
+Google,europe-west2-a,London,England,51.5074456,-0.1277653
+Google,europe-west2-b,London,England,51.5074456,-0.1277653
+Google,europe-west2-c,London,England,51.5074456,-0.1277653
+Google,europe-west3-a,Frankfurt,Germany,50.1106444,8.6820917
+Google,europe-west3-b,Frankfurt,Germany,50.1106444,8.6820917
+Google,europe-west3-c,Frankfurt,Germany,50.1106444,8.6820917
+Google,europe-west4-a,Eemshaven,Netherlands,53.4484736,6.8499627
+Google,europe-west4-b,Eemshaven,Netherlands,53.4484736,6.8499627
+Google,europe-west4-c,Eemshaven,Netherlands,53.4484736,6.8499627
+Google,europe-west6-a,Zurich,Switzerland,47.3744489,8.5410422
+Google,europe-west6-b,Zurich,Switzerland,47.3744489,8.5410422
+Google,europe-west6-c,Zurich,Switzerland,47.3744489,8.5410422
+Google,europe-west8-a,Milan,Italy,45.4641943,9.1896346
+Google,europe-west8-b,Milan,Italy,45.4641943,9.1896346
+Google,europe-west8-c,Milan,Italy,45.4641943,9.1896346
+Google,europe-west9-a,Paris,France,48.8588897,2.3200410
+Google,europe-west9-b,Paris,France,48.8588897,2.3200410
+Google,europe-west9-c,Paris,France,48.8588897,2.3200410
+Google,europe-west10-a,Berlin,Germany,52.5173885,13.3951309
+Google,europe-west10-b,Berlin,Germany,52.5173885,13.3951309
+Google,europe-west10-c,Berlin,Germany,52.5173885,13.3951309
+Google,europe-west12-a,Turin,Italy,45.0677551,7.6824892
+Google,europe-west12-b,Turin,Italy,45.0677551,7.6824892
+Google,europe-west12-c,Turin,Italy,45.0677551,7.6824892
+Google,me-central1-a,Doha,Qatar,25.2856329,51.5264162
+Google,me-central1-b,Doha,Qatar,25.2856329,51.5264162
+Google,me-central1-c,Doha,Qatar,25.2856329,51.5264162
+Google,me-central2-a,Dammam,Saudi Arabia,26.4367824,50.1039991
+Google,me-central2-b,Dammam,Saudi Arabia,26.4367824,50.1039991
+Google,me-central2-c,Dammam,Saudi Arabia,26.4367824,50.1039991
+Google,me-west1-a,Tel Aviv,Israel,32.0852997,34.7818064
+Google,me-west1-b,Tel Aviv,Israel,32.0852997,34.7818064
+Google,me-west1-c,Tel Aviv,Israel,32.0852997,34.7818064
+Google,northamerica-northeast1-a,Montréal,Québec,45.5031824,-73.5698065
+Google,northamerica-northeast1-b,Montréal,Québec,45.5031824,-73.5698065
+Google,northamerica-northeast1-c,Montréal,Québec,45.5031824,-73.5698065
+Google,northamerica-northeast2-a,Toronto,Ontario,43.6534817,-79.3839347
+Google,northamerica-northeast2-b,Toronto,Ontario,43.6534817,-79.3839347
+Google,northamerica-northeast2-c,Toronto,Ontario,43.6534817,-79.3839347
+Google,northamerica-south1-a,Queretaro,Mexico,20.8052225,-99.8837376
+Google,northamerica-south1-b,Queretaro,Mexico,20.8052225,-99.8837376
+Google,northamerica-south1-c,Queretaro,Mexico,20.8052225,-99.8837376
+Google,southamerica-east1-a,Osasco,São Paulo,-23.5324859,-46.7916801
+Google,southamerica-east1-b,Osasco,São Paulo,-23.5324859,-46.7916801
+Google,southamerica-east1-c,Osasco,São Paulo,-23.5324859,-46.7916801
+Google,southamerica-west1-a,Santiago,Chile,-33.4377756,-70.6504502
+Google,southamerica-west1-b,Santiago,Chile,-33.4377756,-70.6504502
+Google,southamerica-west1-c,Santiago,Chile,-33.4377756,-70.6504502
+Google,us-central1-a,Council Bluffs,Iowa,41.2588410,-95.8519484
+Google,us-central1-b,Council Bluffs,Iowa,41.2588410,-95.8519484
+Google,us-central1-c,Council Bluffs,Iowa,41.2588410,-95.8519484
+Google,us-central1-f,Council Bluffs,Iowa,41.2588410,-95.8519484
+Google,us-east1-b,Moncks Corner,South Carolina,33.1960027,-80.0131374
+Google,us-east1-c,Moncks Corner,South Carolina,33.1960027,-80.0131374
+Google,us-east1-d,Moncks Corner,South Carolina,33.1960027,-80.0131374
+Google,us-east4-a,Ashburn,Virginia,39.0297840,-77.4744148
+Google,us-east4-b,Ashburn,Virginia,39.0297840,-77.4744148
+Google,us-east4-c,Ashburn,Virginia,39.0297840,-77.4744148
+Google,us-east5-a,Columbus,Ohio,39.9622601,-83.0007065
+Google,us-east5-b,Columbus,Ohio,39.9622601,-83.0007065
+Google,us-east5-c,Columbus,Ohio,39.9622601,-83.0007065
+Google,us-south1-a,Dallas,Texas,32.7762719,-96.7968559
+Google,us-south1-b,Dallas,Texas,32.7762719,-96.7968559
+Google,us-south1-c,Dallas,Texas,32.7762719,-96.7968559
+Google,us-west1-a,The Dalles,Oregon,45.6015056,-121.1841587
+Google,us-west1-b,The Dalles,Oregon,45.6015056,-121.1841587
+Google,us-west1-c,The Dalles,Oregon,45.6015056,-121.1841587
+Google,us-west2-a,Los Angeles,California,34.0536909,-118.2427660
+Google,us-west2-b,Los Angeles,California,34.0536909,-118.2427660
+Google,us-west2-c,Los Angeles,California,34.0536909,-118.2427660
+Google,us-west3-a,Salt Lake City,Utah,40.7596198,-111.8867970
+Google,us-west3-b,Salt Lake City,Utah,40.7596198,-111.8867970
+Google,us-west3-c,Salt Lake City,Utah,40.7596198,-111.8867970
+Google,us-west4-a,Las Vegas,Nevada,36.1674263,-115.1484131
+Google,us-west4-b,Las Vegas,Nevada,36.1674263,-115.1484131
+Google,us-west4-c,Las Vegas,Nevada,36.1674263,-115.1484131

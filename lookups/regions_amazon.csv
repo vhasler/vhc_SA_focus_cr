@@ -1,0 +1,25 @@
+provider,region_id,city,country,lat,lon
+Amazon,us-east-2,Columbus,US,39.9612,-82.9988
+Amazon,us-east-1,Ashburn,US,39.0437,-77.4875
+Amazon,us-west-2,Boardman,US,45.8399,-119.7006
+Amazon,af-south-1,Cape Town,ZA,-33.9258,18.4232
+Amazon,ap-southeast-3,Jakarta,ID,-6.2146,106.8451
+Amazon,ap-south-1,Mumbai,IN,19.0728,72.8826
+Amazon,ap-northeast-2,Incheon,KR,37.4565,126.7052
+Amazon,ap-southeast-1,Singapore,SG,1.2897,103.8501
+Amazon,ap-southeast-2,Sydney,AU,-33.8678,151.2073
+Amazon,ap-northeast-1,Tokyo,JP,35.6895,139.6917
+Amazon,ca-central-1,Montréal,CA,45.5088,-73.5878
+Amazon,cn-north-1,Beijing,CN,39.9075,116.3972
+Amazon,eu-central-1,Frankfurt am Main,DE,50.1155,8.6842
+Amazon,eu-west-1,Dublin,IE,53.3331,-6.2489
+Amazon,eu-west-2,London,GB,51.5085,-0.1257
+Amazon,eu-south-1,Milan,IT,45.4643,9.1895
+Amazon,eu-west-3,Paris,FR,48.8534,2.3488
+Amazon,eu-south-2,Zaragoza,ES,41.6561,-0.8773
+Amazon,eu-north-1,Stockholm,SE,59.3294,18.0687
+Amazon,eu-central-2,Zürich,CH,47.3667,8.5500
+Amazon,sa-east-1,Diadema,BR,-23.6861,-46.6228
+Amazon,gov-west-1,Boardman,US,45.8399,-119.7006
+Amazon,il-central-1,Tel Aviv,IL,32.0809,34.7806
+Amazon,me-central-1,Dubai,AE,25.0772,55.3093

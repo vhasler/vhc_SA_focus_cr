@@ -55,10 +55,9 @@ index=_internal sourcetype="vhc:cloudregions"
 ```
 
 ### Unterstützte Provider
-
-- Amazon
-- Microsoft
-- Google
+- [Amazon](https://docs.aws.amazon.com/quicksuite/latest/userguide/regions.html)
+- [Microsoft](https://learn.microsoft.com/en-us/azure/reliability/regions-list?view=azure-cloud)
+- [Google](https://cloud.google.com/compute/docs/gpus/gpu-regions-zones)
 
 ```spl
 | eval provider = case(
@@ -124,9 +123,9 @@ index=_internal sourcetype="vhc:cloudregions"
 ```
 
 ### Supported Provider
-- Amazon
-- Microsoft
-- Google
+- [Amazon](https://docs.aws.amazon.com/quicksuite/latest/userguide/regions.html)
+- [Microsoft](https://learn.microsoft.com/en-us/azure/reliability/regions-list?view=azure-cloud)
+- [Google](https://cloud.google.com/compute/docs/gpus/gpu-regions-zones)
 
 ```spl
 | eval provider = case(
