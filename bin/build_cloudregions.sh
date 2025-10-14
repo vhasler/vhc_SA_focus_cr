@@ -2,67 +2,56 @@
 # -----------------------------------------------------------------------------
 # build_regions.sh
 # Lädt Cloud-Region-Daten (AWS, Azure, GCP), führt sie zusammen
-# und speichert sie als lookups/cloud_regions.csv
+# und speichert sie als lookups/cloudregions.csv
 # -----------------------------------------------------------------------------
 
-set -e  # Script bricht bei Fehler ab
+# Nicht bei erstem Fehler abbrechen – wir loggen und laufen weiter
+set -u  # (kein -e)
 
 APP_DIR="$(dirname "$0")"
 APP_NAME="vhc_SA_cloudregions"
 APP_BASE="$SPLUNK_HOME/etc/apps/${APP_NAME}"
-APP_VAR_DIR="${APP_BASE}/var"
 LOOKUP_DIR="${APP_BASE}/lookups"
 
-# -----------------------------------------------------------------------------
-# Pfade
-# -----------------------------------------------------------------------------
-LOCKFILE="${APP_VAR_DIR}/vhc_SA_cloudregions.lock"
-LOGFILE="$SPLUNK_HOME/var/log/splunk/vhc_SA_cloudregions.log"
+LOGFILE="$SPLUNK_HOME/var/log/splunk/${APP_NAME}.log"
+TARGET_LOOKUP="${LOOKUP_DIR}/cloudregions.csv"
 
-# -----------------------------------------------------------------------------
-# Lockfile: Verhindert parallele Ausführungen
-# -----------------------------------------------------------------------------
-if [ -f "$LOCKFILE" ]; then
-    echo "$(date '+%Y-%m-%d %H:%M:%S') - Script already running, exiting." >> "$LOGFILE"
-    exit 0
-fi
-trap "rm -f \"$LOCKFILE\"" EXIT
-touch "$LOCKFILE"
+# Hilfsfunktion zum Ausführen + Loggen ohne Abbruch
+run_step() {
+  local msg="$1"; shift
+  echo "[*] ${msg} ..." >> "$LOGFILE"
+  if "$@"; then
+    echo "[✓] ${msg} OK" >> "$LOGFILE"
+  else
+    local rc=$?
+    echo "[!] ${msg} FAILED (rc=${rc})" >> "$LOGFILE"
+  fi
+}
 
 echo "=== [$(date '+%Y-%m-%d %H:%M:%S')] Cloud Regions Build gestartet ===" >> "$LOGFILE"
 
-# -----------------------------------------------------------------------------
-# 1️⃣ AWS
-# -----------------------------------------------------------------------------
-echo "[*] Lade AWS-Regionen..." >> "$LOGFILE"
-"$SPLUNK_HOME/bin/splunk" cmd python3 "${APP_DIR}/regions_aws.py" >> "$LOGFILE" 2>&1
+# 1) AWS
+run_step "Lade AWS-Regionen" \
+  "$SPLUNK_HOME/bin/splunk" cmd python3 "${APP_DIR}/regions_aws.py" >> "$LOGFILE" 2>&1
 
-# -----------------------------------------------------------------------------
-# 2️⃣ Azure
-# -----------------------------------------------------------------------------
-echo "[*] Lade Azure-Regionen..." >> "$LOGFILE"
-"$SPLUNK_HOME/bin/splunk" cmd python3 "${APP_DIR}/regions_azure.py" >> "$LOGFILE" 2>&1
+# 2) Azure
+run_step "Lade Azure-Regionen" \
+  "$SPLUNK_HOME/bin/splunk" cmd python3 "${APP_DIR}/regions_azure.py" >> "$LOGFILE" 2>&1
 
-# -----------------------------------------------------------------------------
-# 3️⃣ GCP
-# -----------------------------------------------------------------------------
-echo "[*] Lade GCP-Regionen..." >> "$LOGFILE"
-"$SPLUNK_HOME/bin/splunk" cmd python3 "${APP_DIR}/regions_gcp.py" >> "$LOGFILE" 2>&1
+# 3) GCP
+run_step "Lade GCP-Regionen" \
+  "$SPLUNK_HOME/bin/splunk" cmd python3 "${APP_DIR}/regions_gcp.py" >> "$LOGFILE" 2>&1
 
-# -----------------------------------------------------------------------------
-# 4️⃣ Merge
-# -----------------------------------------------------------------------------
-echo "[*] Führe CSV-Dateien zusammen..." >> "$LOGFILE"
-"$SPLUNK_HOME/bin/splunk" cmd python3 "${APP_DIR}/merge_regions.py" >> "$LOGFILE" 2>&1
+# 4) Merge
+run_step "Führe CSV-Dateien zusammen" \
+  "$SPLUNK_HOME/bin/splunk" cmd python3 "${APP_DIR}/merge_regions.py" >> "$LOGFILE" 2>&1
 
-# -----------------------------------------------------------------------------
-# 5️⃣ Ergebnis prüfen
-# -----------------------------------------------------------------------------
-if [[ -f "${LOOKUP_DIR}/cloudregions.csv" ]]; then
-    echo "[✓] Erfolgreich erstellt: ${LOOKUP_DIR}/cloudregions.csv" >> "$LOGFILE"
+# 5) Ergebnis prüfen
+if [[ -f "$TARGET_LOOKUP" ]]; then
+  echo "[✓] Erfolgreich erstellt: ${TARGET_LOOKUP}" >> "$LOGFILE"
 else
-    echo "[!] Fehler: cloudregions.csv wurde nicht erstellt!" >> "$LOGFILE"
-    exit 1
+  echo "[!] Fehler: ${TARGET_LOOKUP} wurde nicht erstellt!" >> "$LOGFILE"
+  # kein 'exit 1', damit scripted input nicht hart fehlschlägt
 fi
 
 echo "[✓] Fertig. ($(date '+%Y-%m-%d %H:%M:%S'))" >> "$LOGFILE"
