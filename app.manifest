@@ -1,7 +1,7 @@
 {
   "schemaVersion": "2.0.0",
   "info": {
-    "title": "FOCUS\u2122 SA Cloudregions",
+    "title": "VHC Add-on for FOCUS\u2122 Cloudregions",
     "id": {
       "group": null,
       "name": "vhc_SA_focus_cr",
