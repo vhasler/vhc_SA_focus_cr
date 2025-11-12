@@ -1,4 +1,4 @@
-# vhc_SA_focus_cr
+# VHC Add-on for FOCUS™ Cloudregions
 ---
 ## 🇩🇪 Deutsch
 Die benötigten Python-Bibliotheken sind bereits in der App enthalten.
