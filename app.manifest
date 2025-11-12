@@ -1,21 +1,21 @@
 {
   "schemaVersion": "2.0.0",
   "info": {
-    "title": "SA CloudRegions",
+    "title": "FOCUS\u2122 SA Cloudregions",
     "id": {
       "group": null,
-      "name": "vhc_SA_cloudregions",
-      "version": "1.0.0"
+      "name": "vhc_SA_focus_cr",
+      "version": "1.0.1"
     },
     "author": [
       {
-        "name": "VHC Consulting",
+        "name": "Ing. Victor Hasler, Msc",
         "email": null,
         "company": null
       }
     ],
     "releaseDate": null,
-    "description": "Collects and merges cloud region data (AWS, Microsoft, Google) into a unified lookup table.",
+    "description": "Provide cloud regions ip based on RegionId from FOCUS\u2122 Specification",
     "classification": {
       "intendedAudience": null,
       "categories": [],
